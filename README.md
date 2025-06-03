@@ -15,19 +15,43 @@ You will:
 
 ## Getting Started
 
-1. Accept the GitHub Classroom assignment invitation.
-2. Clone your personal repository created by GitHub Classroom.
-3. Install dependencies:
-   
-   ```
-   npm install
-   ```
-4. Create a `.env` file based on the provided `.env.example` with the required environment variables.
-5. Run the server:
-   
-   ```
-   npm start
-   ```
+1. **Clone the Repository:**
+   - Accept the GitHub Classroom assignment invitation.
+   - Clone your personal repository created by GitHub Classroom.
+
+2. **Install Dependencies:**
+   - Ensure you have [Node.js](https://nodejs.org/) installed.
+   - In the project's root directory, run:
+     ```
+     npm install
+     ```
+   - This will install the required dependencies listed in `package.json`, which typically include:
+     - express
+     - body-parser
+     - swagger-ui-express
+     - swagger-jsdoc
+     - uuid
+     - (Other dependencies defined by your project)
+
+3. **Set Up Environment Variables:**
+   - Create a `.env` file in the project root based on the provided [`.env.example`](.env.example).
+   - Example contents:
+     ```
+     PORT=3000
+     NODE_ENV=development
+     MY_TOKEN=WSM_secret_key*#789)-+
+     ```
+
+4. **Run the Application:**
+   - Start the server by running:
+     ```
+     npm start
+     ```
+   - The server will start on the port specified in your `.env` file (default is 3000).
+   - Access the API documentation via:
+     ```
+     http://localhost:3000/api-docs
+     ```
 
 ## Files Included
 
@@ -99,7 +123,7 @@ Detailed below are the API endpoints and what they do:
   ```
 - **Expected Response:**
   A JSON array containing products whose name includes the search term.
-- **Error Case:** If `q` is missing, a 400 response with a message "Query parameter 'q' is required for search."
+- **Error Case:** If `q` is missing, a 400 response with a message "Query parameter 'q' is required for search." is returned.
 
 ### 5. GET /api/products/stats
 - **Description:** Get statistics on products, such as the count per category.
